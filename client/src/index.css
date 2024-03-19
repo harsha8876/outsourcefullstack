@@ -1,0 +1,64 @@
+@tailwind base;
+@tailwind components;
+
+.dropd{
+   @apply flex hover:bg-[#415A77] hover:scale-105 px-2 py-1 rounded-lg items-center
+}
+.fortext{
+   @apply font-medium text-base text-[#E0E1DD] cursor-pointer font-amaze
+}
+.forbtn{
+   @apply text-[#E0E1DD] font-amaze border-[#E0E1DD] border-2 px-1 w-[4pc] hover:bg-[#E0E1DD] hover:text-[#0D1B2A] rounded-lg cursor-pointer
+}
+.forangle{
+   @apply  text-[#E0E1DD] font-amaze transition duration-150 ease-in-out transform
+}
+.foroptspa
+{
+   @apply p-3 hover:bg-slate-300 rounded-lg font-amaze text-[#0D1B2A] flex items-center cursor-pointer
+}
+.fordrop
+{
+   @apply flex flex-col w-[10pc] bg-[#E0E1DD] rounded-lg shadow-xl h-fit text-[#0D1B2A] font-medium 
+}
+.forcategories
+{
+   @apply  text-sm text-[#E0E1DD] cursor-pointer font-amaze p-3 rounded-lg hover:underline decoration-2 decoration-white hover:scale-110 underline-offset-8
+    
+}
+.forpopular
+{
+   @apply bg-[#0D1B2A] text-white font-thin p-1 rounded-lg hover:bg-[#365486] hover:scale-105
+}
+.forfootheads
+{
+   @apply flex p-3 text-white font-amaze font-medium md:hover:bg-inherit md:w-[40pc] flex-col
+}
+.forfootfea
+{
+   @apply pb-3 md:text-[20px] font-semibold flex justify-between w-full
+}
+.slick-slide > div{
+   margin: 0 10px;
+}
+.foritem{
+   @apply flex gap-5 max-w-xl text-[18px]
+}
+.foritemowner{
+   @apply flex gap-5 max-w-xl text-[18px] flex-row-reverse self-end
+}
+.formsg{
+   @apply  mx-auto bg-[#7FC7D9] text-white p-2 rounded-r-3xl rounded-b-3xl text-[13px] md:text-[16px] 
+}
+.forclmsg{
+   @apply  mx-auto bg-[#365486] text-white p-2 rounded-l-3xl rounded-b-3xl text-[13px] md:text-[16px]
+}
+
+@tailwind utilities;
+.scrollable-content {
+   height: 440px;
+ }
+ 
+ .scrollable-content::-webkit-scrollbar {
+   display: none;
+ }
