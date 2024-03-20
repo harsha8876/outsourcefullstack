@@ -7,13 +7,13 @@ import newRequest from '../../utils/newRequest';
 
 const Gigcard = ({item}) => {
 
-   const { isLoading, error, data, refetch } = useQuery({
-      queryKey: ["gigUser"],
+   const { isLoading, error, data } = useQuery({
+      queryKey: [item.userId],
       queryFn: () =>
-        newRequest.get(`/users/${item.userId}`).then(res=> {
+        newRequest.get(`/users/${item.userId}`).then((res) => {
           return res.data;
-        })
-    })
+        }),
+    });
 
 
 

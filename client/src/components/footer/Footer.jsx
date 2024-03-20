@@ -59,7 +59,8 @@ const Footer = () => {
 
 
   return (
-    <div name="footer" className='bg-[#0F1035] flex flex-col '>
+    <div>
+    <div name="footer" className='bg-[#0F1035] flex flex-col absolute w-full'>
       <div name='drops' className='flex flex-col m-4 bg-[#1B263B] rounded-lg md:flex-row md:items-start'>
         <div name='heading' className='forfootheads group'>
           <div className='forfootfea' onClick= {isMobile ? handleBarsClick1 : null}><span>Categories</span>
@@ -134,6 +135,7 @@ const Footer = () => {
       </div>
       </div>
       
+    </div>
     </div>
   )
 }
