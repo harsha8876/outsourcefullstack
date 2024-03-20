@@ -1,9 +1,13 @@
 import React from "react";
 import { FaRegEnvelope } from "react-icons/fa6";
 import { useQuery } from "@tanstack/react-query";
+import { useNavigate } from "react-router-dom";
 import newRequest from '../utils/newRequest.js';
 
 const Orders = () => {
+
+  const currentUser = JSON.parse(localStorage.getItem("currentUser"));
+  const navigate = useNavigate();
   const { isLoading, error, data } = useQuery({
     queryKey: ["orders"],
     queryFn: () =>
@@ -11,7 +15,23 @@ const Orders = () => {
         return res.data;
       }),
   });
+  const handleContact = async (order) => {
+    const sellerId = order.sellerId;
+    const buyerId = order.buyerId;
+    const id = sellerId + buyerId;
 
+    try {
+      const res = await newRequest.get(`/conversations/single/${id}`);
+      navigate(`/chat/${res.data.id}`);
+    } catch (err) {
+      if (err.response.status === 404) {
+        const res = await newRequest.post(`/conversations/`, {
+          to: currentUser.seller ? buyerId : sellerId,
+        });
+        navigate(`/chat/${res.data.id}`);
+      }
+    }
+  };
   return (
     <div className="flex justify-center">
       {isLoading ? (
@@ -51,7 +71,7 @@ const Orders = () => {
                   </td>
                   <td>₹{order.price}</td>
                   <td>
-                    <FaRegEnvelope className="mx-auto cursor-pointer text-[#365486] h-6 w-6" />
+                    <FaRegEnvelope className="mx-auto cursor-pointer text-[#365486] h-6 w-6"  onClick={() => handleContact(order)}/>
                   </td>
                 </tr>
               ))}

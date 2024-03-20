@@ -42,16 +42,16 @@
    margin: 0 10px;
 }
 .foritem{
-   @apply flex gap-5 max-w-xl text-[18px]
+   @apply flex gap-5 max-w-xl text-[18px] p-2
 }
 .foritemowner{
    @apply flex gap-5 max-w-xl text-[18px] flex-row-reverse self-end
 }
 .formsg{
-   @apply  mx-auto bg-[#7FC7D9] text-white p-2 rounded-r-3xl rounded-b-3xl text-[13px] md:text-[16px] 
+   @apply  mr-auto bg-[#7FC7D9] text-white p-2 rounded-r-3xl rounded-b-3xl text-[13px] md:text-[16px] 
 }
 .forclmsg{
-   @apply  mx-auto bg-[#365486] text-white p-2 rounded-l-3xl rounded-b-3xl text-[13px] md:text-[16px]
+   @apply  mx-auto bg-[#365486] text-white p-2 rounded-l-3xl rounded-b-3xl text-[13px] md:text-[16px] 
 }
 
 @tailwind utilities;

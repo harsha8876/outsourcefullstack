@@ -1,6 +1,6 @@
 import createError from "../utils/createError.js";
-import Order from "../models/order.model.js"
-import Gig from "../models/gig.model.js"
+import Order from "../models/order.model.js";
+import Gig from "../models/gig.model.js";
 export const createOrder = async  (req,res,next) =>
 {  
    const gig = await Gig.findById(req.params.gigId);
