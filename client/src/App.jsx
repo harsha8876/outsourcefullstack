@@ -12,6 +12,8 @@ import Login from './features/login/Login'
 import Mygigs from './mygigs/Mygigs'
 import Orders from './orders/Orders'
 import Register from './register/Register'
+import Pay from './features/pay/Pay'
+import Success from './features/success/Success'
 import {
   QueryClient,
   QueryClientProvider,
@@ -23,6 +25,7 @@ import {
   RouterProvider,
   Outlet
 } from "react-router-dom";
+
 function App()
  {
   const queryClient = new QueryClient()
@@ -80,7 +83,15 @@ function App()
       {
         path:"/register",
         element: <Register/>
-      }     
+      },
+      {
+        path: "/pay/:id",
+        element: <Pay />,
+      },
+      {
+        path: "/success",
+        element: <Success />,
+      },
     ]
     },
   ]);

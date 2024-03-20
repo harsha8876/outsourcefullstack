@@ -3,7 +3,7 @@ import { FaStar} from "react-icons/fa6";
 import { FaClock, FaArrowsRotate, FaCheck } from "react-icons/fa6";
 import { Carousel } from 'flowbite-react';
 import {useQuery} from "@tanstack/react-query"
-import { useParams } from 'react-router-dom';
+import { Link, useParams } from 'react-router-dom';
 import newRequest from '../../utils/newRequest.js';
 import Reviews from '../../components/reviews/Reviews';
 
@@ -89,8 +89,9 @@ const Gig = () => {
                 <span>{feature}</span>
               </div>))}
             </div>
+            <Link to={`/pay/${id}`}>
             <button className='hover:border-[#365486] hover:text-[#365486] border-[1px] w-full p-2 my-2 font-medium text-white bg-[#365486] hover:bg-white'>Continue</button>
-
+            </Link>
           </div>
 
       </div>
