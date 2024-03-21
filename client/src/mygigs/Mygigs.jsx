@@ -15,7 +15,7 @@ const {id} = useParams();
   const { isLoading, error, data } = useQuery({
     queryKey: ["myGigs"],
     queryFn: () =>
-      newRequest.get(`/gigs`).then((res) => {
+      newRequest.get(`/gigs?userId=${currentUser._id}`).then((res) => {
         return res.data;
       }),
   });
