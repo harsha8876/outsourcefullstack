@@ -203,17 +203,13 @@ return (
           <FaAngleDown className={`forangle group-hover:text-[#0D1B2A] group-hover:font-semibold ${showCats ? 'rotate-180' : ''}`}/>
         </div></div></div>{showCats && <><div className={isFull ?'fordrop w-[300px] absolute top-[2pc] left-3' :'flex h-[50px] justify-center gap-3 bg-[#415A77] shadow-3xl items-center relative z-0 p-3 flex-nowrap shrink-0'}>
 
-          <Link to="" className={isFull ? 'foroptspa' : 'forcategories'}>Technology & Programming</Link>
-          <Link to="" className={isFull ? 'foroptspa' : 'forcategories'}>Writing & Translation</Link>
-          <Link to="" className={isFull ? 'foroptspa' : 'forcategories'}>Design</Link>
-          <Link to="" className={isFull ? 'foroptspa' : 'forcategories'}>Digital Marketing</Link>
-          <Link to="" className={isFull ? 'foroptspa' : 'forcategories'}>Video</Link>
-          <Link to="" className={isFull ? 'foroptspa' : 'forcategories'}>Photo & Image</Link>
-          <Link to="" className={isFull ? 'foroptspa' : 'forcategories'}>Business</Link>
-          <Link to="" className={isFull ? 'foroptspa' : 'forcategories'}>Music & Audios</Link>
-          <Link to="" className={isFull ? 'foroptspa' : 'forcategories'}>Marketing</Link>
-          <Link to="" className={isFull ? 'foroptspa' : 'forcategories'}>Branding & Sales</Link>
-          <Link to="/gigs?cat=socialmarketing" className={isFull ? 'foroptspa' : 'forcategories'}>Social Media</Link>
+          <Link to="/gigs?cat=photography" className={isFull ? 'foroptspa' : 'forcategories'}>Photography</Link>
+          <Link to="/gigs?cat=interiordesign" className={isFull ? 'foroptspa' : 'forcategories'}>Interior Design</Link>
+          <Link to="/gigs?cat=logodesign" className={isFull ? 'foroptspa' : 'forcategories'}>Logo Design</Link>
+          <Link to="/gigs?cat=socialmarketing" className={isFull ? 'foroptspa' : 'forcategories'}>Social Marketing</Link>
+          <Link to="/gigs?cat=videoediting" className={isFull ? 'foroptspa' : 'forcategories'}>Video Editing</Link>
+          <Link to="/gigs?cat=voiceover" className={isFull ? 'foroptspa' : 'forcategories'}>Voiceover</Link>
+          <Link to="/gigs?cat=webdevelopment" className={isFull ? 'foroptspa' : 'forcategories'}>Web development</Link>
 
       </div></>}</div>
       
