@@ -11,6 +11,11 @@ const Featured = () => {
   const handleSubmit = () => {
     navigate(`/gigs?search=${input}`);
   };
+  const handleKeyDown = (event) => {
+   if (event.key === 'Enter') {
+     handleSubmit();
+   }
+ };
   return (
     <div name="container" className='flex flex-col bg-[#DCF2F1] w-full md:h-[40pc] items-center md:flex-row'>
       <div name="left" className='order-2 m-3 mt-0 pt-0 leading-none font-semibold flex flex-col items-center gap-7 p-4 w-full md:order-1 md:gap-10'>
@@ -18,7 +23,11 @@ const Featured = () => {
          <div name="search" className='flex hover:shadow-xl'>
          <div name="searchInput" className='flex bg-white rounded-l-lg'>
             <div name="searchicon" className='p-3'><FaMagnifyingGlass className='h-[20px] w-[20px] hover:scale-105'/></div>
-            <input  type="text" placeholder="Search for a service..."  className='p-3 border-none outline-none md:w-[30vw]'onChange={(e) => setInput(e.target.value)}/>
+            <input  type="text" placeholder="Search for a service..." 
+             className='p-3 border-none outline-none md:w-[30vw]'
+             onChange={(e) => setInput(e.target.value)}
+             onKeyDown={handleKeyDown}
+             />
          </div>
          <div name="searchbutton" className='bg-[#0F1035] text-white p-3 rounded-r-lg hover:bg-[#365486]'><button onClick={handleSubmit} >Search</button></div>
          </div>
