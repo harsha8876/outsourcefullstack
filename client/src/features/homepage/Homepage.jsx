@@ -35,7 +35,7 @@ const Homepage = () => {
       <Slide>
       {isLoading ? <img src='/images/loading.svg' alt='Loading' className='h-[85px] m-auto' /> : error ? "Something went wrong!"
        :  featuredGigs.map((gig)=>(
-          <Procard key={gig._id} item={gig}/>
+          <Procard key={gig._id} items={gig}/>
         ))}
       </Slide>
       </div>
