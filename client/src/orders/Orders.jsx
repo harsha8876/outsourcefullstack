@@ -35,7 +35,7 @@ const Orders = () => {
   return (
     <div className="flex justify-center">
       {isLoading ? (
-        "Loading..."
+        <img src='/images/loading.svg' alt='Loading' className='h-[85px] m-auto' />
       ) : error ? (
         "Something went wrong!"
       ) : (

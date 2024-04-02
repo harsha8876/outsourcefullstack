@@ -4,6 +4,7 @@ import {FaAngleDown} from "react-icons/fa6";
 import {useQuery} from "@tanstack/react-query"
 import newRequest from '../../utils/newRequest';
 import { useLocation } from 'react-router-dom';
+import { categories } from '../../data.js'; 
 
 
 const Gigs = () => {
@@ -54,13 +55,16 @@ const Gigs = () => {
       document.removeEventListener('click', handleBodyClick);
     };
   }, [open]);
-
+  const category = new URLSearchParams(search).get('cat');
+  
+        const { breadcrumbs, title, description } = categories[category] || {};
   return (
     <div name='gigs' className=''>
       <div name='container' className='m-5 md:flex md:flex-col md:gap-[15px] md:px-[100px]'>
-        <span name='breadcrumbs' className='font-amaze text-gray-500 text-sm font-medium'>OUTSOURCE &gt; GRAPHIC DESIGN</span>
-        <h1 className='text-[#0D1B2A] text-[30px] font-semibold py-2'>AI Artists</h1>
-        <p className='text-gray-600 font-amaze font-medium'>Explore the boundaries of Art & Technology with Outsource AI Artists.</p>
+        <span name='breadcrumbs' className='font-amaze text-gray-500 text-sm font-medium'>{breadcrumbs}</span>
+        <h1 className='text-[#0D1B2A] text-[30px] font-semibold py-2'>{title}</h1>
+        <p className='text-gray-600 font-amaze font-medium'>{description}</p>
+        
         <div name='menu' className='py-2 md:flex md:justify-between'>
           <div name='left' className='flex gap-3 w-full items-center'>
             <span className='font-amaze font-semibold text-[#0D1B2A]'>Budget</span>
@@ -83,7 +87,7 @@ const Gigs = () => {
           </div>
         </div>
         <div name='cards' className='md:flex md:flex-wrap md:justify-between'>
-        {isLoading ? "loading" : error ? "Something went wrong!" : data.map((gig)=>(
+        {isLoading ? <img src='/images/loading.svg' alt='Loading' className='h-[85px] m-auto' /> : error ? "Something went wrong!" : data.map((gig)=>(
           <Gigcard key={gig._id} item={gig}/>
         ))}</div>
       </div>

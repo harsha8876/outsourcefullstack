@@ -38,7 +38,7 @@ const Reviews = ({gigId}) => {
       <div name='review'>
         <h2  className='font-amaze font-semibold text-[#365486] text-[18px] py-4'>Reviews</h2>
         <div name='reviewall' className='flex flex-col gap-3'>
-        {isLoading ? "loading" : error ? "Something went wrong!" : data.map((review) => 
+        {isLoading ? <img src='/images/loading.svg' alt='Loading' className='h-[85px] m-auto' /> : error ? "Something went wrong!" : data.map((review) => 
         <Review key={review._id} review={review}/>)}
         <div name="add">
         <h3>Add a review</h3>

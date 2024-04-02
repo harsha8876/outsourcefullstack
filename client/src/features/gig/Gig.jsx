@@ -35,13 +35,13 @@ const Gig = () => {
   
   return (
     <div name='gig' className=''>
-      {isLoading ? "loading" : 
+      {isLoading ? <img src='/images/loading.svg' alt='Loading' className='h-[85px] m-auto' /> : 
       error ? "Something went wrong!" : <div name='container' className='m-5 flex flex-col xl:mx-[125px] xl:flex-row xl:flex-wrap xl:relative'>
       <div name='left' className='flex flex-col xl:w-[48vw]'>
-        <span name='breadcrumbs' className='font-amaze text-gray-500 text-sm font-medium'>OUTSOURCE &gt; GRAPHIC DESIGN</span>
+        <span name='breadcrumbs' className='font-amaze text-gray-500 text-sm font-medium'>OUTSOURCE &gt; {data.cat.toUpperCase()}</span>
           <h1 className='text-[#0D1B2A] text-[30px] font-semibold py-7 leading-none'>
             {data.title}</h1>
-          {isLoadingUser ? ("loading") : errorUser ? ("Something went wrong!") :<div name='profile' className='flex items-center gap-2'>
+          {isLoadingUser ? (<img src='/images/loading.svg' alt='Loading' className='h-[85px] m-auto' />) : errorUser ? ("Something went wrong!") :<div name='profile' className='flex items-center gap-2'>
             <img src={dataUser.img || "/images/profile.jpg"} alt='' className='h-[35px] w-[35px] rounded-full object-cover border-2 border-black'/>
             <span className='font-amaze font-semibold text-gray-500'>{dataUser.username}</span>
             {!isNaN (data.totalStars / data.starNumber) && <><div name='stars' className='flex items-center text-yellow-500'>
@@ -99,7 +99,7 @@ const Gig = () => {
       <h2 className='font-amaze font-semibold text-[#365486] text-[18px] py-4 pt-2'>About this Gig</h2>
       <p name='desc' className='font-amaze text-gray-500 font-medium'>{data.desc}</p>
       
-      {isLoadingUser ? ("loading") : errorUser ? ("Something went wrong!") :<div name="seller" className='py-3'>
+      {isLoadingUser ? (<img src='/images/loading.svg' alt='Loading' className='h-[85px] m-auto' />) : errorUser ? ("Something went wrong!") :<div name="seller" className='py-3'>
         <h2 className='font-amaze font-semibold text-[#365486] text-[18px] py-4'>About the Seller</h2>
         <div className='flex flex-col justify-center w-full items-center gap-3 xl:flex-row'>
           <img src={dataUser.img || "/images/profile.jpg"} alt='' className='h-[35px] w-[35px] rounded-full object-cover border-2 border-black'/>

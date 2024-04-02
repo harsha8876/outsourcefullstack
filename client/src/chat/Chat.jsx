@@ -44,7 +44,7 @@ const Chat = () => {
         <span name="breadcrumbs" className='font-medium text-[13px] text-gray-400 p-4'>
           <Link to="/chats">Messages</Link>
         </span></div>
-        {isLoading ? "loading" : 
+        {isLoading ? <img src='/images/loading.svg' alt='Loading' className='h-[85px] m-auto' /> : 
       error ? "Something went wrong!" :
        <div name="messages" className='px-2 sm:px-12 flex flex-col gap-5 h-96 overflow-y-auto scrollable-content'>
           

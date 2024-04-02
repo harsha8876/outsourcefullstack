@@ -21,7 +21,7 @@ const Review = ({ review }) => {
     <div>
        <div name='reviewone'>
        {isLoading ? (
-        "loading"
+        <img src='/images/loading.svg' alt='Loading' className='h-[85px] m-auto' />
       ) : error ? (
         "error"
       ) : (<div name='infowho' className='flex gap-2'>

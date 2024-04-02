@@ -1,38 +1,89 @@
 
 export const cards = [
-    {
-      id: 1,
-      img:'/images/photography.png'
-    },
-    {
-      id: 2,
-      img:'/images/interiordesign.png'
-    },
-    {
-      id: 3,
-      img:'/images/logodesign.png'
-    },
-    {
-      id: 4,
-      img:'/images/marketing.png'
-    },
-    {
-      id: 5,
-      img:'/images/socialmarketing.png'
-    },
-    {
-      id: 6,
-      img:'/images/videoediting.png'
-    },
-    {
-      id: 7,
-      img:'/images/voiceover.png'
-    },
-    {
-      id: 8,
-      img:'/images/webdev.png'
-    },
-  ];
+  {
+    id: 1,
+    img:'/images/photography.png',
+    category: 'photography'
+  },
+  {
+    id: 2,
+    img:'/images/interiordesign.png',
+    category: 'interiordesign'
+  },
+  {
+    id: 3,
+    img:'/images/logodesign.png',
+    category: 'logodesign'
+  },
+  {
+    id: 4,
+    img:'/images/marketing.png',
+    category: 'marketing'
+  },
+  {
+    id: 5,
+    img:'/images/socialmarketing.png',
+    category: 'socialmarketing'
+  },
+  {
+    id: 6,
+    img:'/images/videoediting.png',
+    category: 'videoediting'
+  },
+  {
+    id: 7,
+    img:'/images/voiceover.png',
+    category: 'voiceover'
+  },
+  {
+    id: 8,
+    img:'/images/webdev.png',
+    category: 'webdevelopment'
+  },
+];
+export const categories = {
+  photography: {
+    breadcrumbs: 'OUTSOURCE > PHOTOGRAPHY',
+    title: 'Photography Services',
+    description: 'Explore our photography services and find the perfect photographer for your needs.'
+  },
+  interiordesign: {
+    breadcrumbs: 'OUTSOURCE > INTERIOR DESIGN',
+    title: 'Interior Design Services',
+    description: 'Discover interior design professionals to transform your space.'
+  },
+  logodesign: {
+    breadcrumbs: 'OUTSOURCE > LOGO DESIGN',
+    title: 'Logo Design Services',
+    description: 'Find talented designers to create unique and memorable logos for your brand.'
+  },
+  marketing: {
+    breadcrumbs: 'OUTSOURCE > MARKETING',
+    title: 'Marketing Services',
+    description: 'Boost your business with effective marketing strategies and campaigns.'
+  },
+  socialmarketing: {
+    breadcrumbs: 'OUTSOURCE > SOCIAL MEDIA MARKETING',
+    title: 'Social Media Marketing Services',
+    description: 'Maximize your online presence and engagement with expert social media marketing.'
+  },
+  videoediting: {
+    breadcrumbs: 'OUTSOURCE > VIDEO EDITING',
+    title: 'Video Editing Services',
+    description: 'Enhance your videos with professional editing and post-production services.'
+  },
+  voiceover: {
+    breadcrumbs: 'OUTSOURCE > VOICEOVER',
+    title: 'Voiceover Services',
+    description: 'Find the perfect voice talent for your project, from narration to character voices.'
+  },
+  webdevelopment: {
+    breadcrumbs: 'OUTSOURCE > WEB DEVELOPMENT',
+    title: 'Web Development Services',
+    description: 'Create stunning websites and web applications with skilled web developers.'
+  }
+};
+
   export const projects=[
       {
         id: 1,

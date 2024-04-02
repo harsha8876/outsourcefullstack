@@ -82,10 +82,13 @@ const Add = () => {
             <label htmlFor="">Category</label>
             <select name="cat" id="cat" className="p-5 bg-gray-200 rounded-lg focus:border-blue-400 focus:outline-none border-white border-[1px]" onChange={handleChange}>
               <option>Select the Category</option>
-              <option value="design">Design</option>
-              <option value="web">Web Development</option>
-              <option value="animation">Animation</option>
-              <option value="music">Music</option>
+              <option value="photography">Photography</option>
+              <option value="interiordesign">Interior Design</option>
+              <option value="logodesign">Logo Design</option>
+              <option value="socialmarketing">Social Marketing</option>
+              <option value="videoediting">Video Editing</option>
+              <option value="voiceover">Voiceover</option>
+              <option value="webdevelopment">Web development</option>
             </select>
             <div name="images" className="flex flex-col justify-between md:items-center gap-2 m-auto">
               <div name="imagesInputs" className="flex flex-col md:flex-row">

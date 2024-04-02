@@ -213,7 +213,7 @@ return (
           <Link to="" className={isFull ? 'foroptspa' : 'forcategories'}>Music & Audios</Link>
           <Link to="" className={isFull ? 'foroptspa' : 'forcategories'}>Marketing</Link>
           <Link to="" className={isFull ? 'foroptspa' : 'forcategories'}>Branding & Sales</Link>
-          <Link to="" className={isFull ? 'foroptspa' : 'forcategories'}>Social Media</Link>
+          <Link to="/gigs?cat=socialmarketing" className={isFull ? 'foroptspa' : 'forcategories'}>Social Media</Link>
 
       </div></>}</div>
       

@@ -36,7 +36,7 @@ const {id} = useParams();
   
   return (
     <div name="myGigs" className="flex justify-center">
-      {isLoading ? "loading" : error ? "error" :<div name="container" className="w-[600px] p-5 md:w-[1200px]">
+      {isLoading ? <img src='/images/loading.svg' alt='Loading' className='h-[85px] m-auto' /> : error ? "error" :<div name="container" className="w-[600px] p-5 md:w-[1200px]">
         <div name="title" className="flex justify-between font-amaze font-semibold text-[18px] mb-3 items-center" >
           <h1 className="text-[#0D1B2A] text-[30px] font-semibold py-2">Gigs</h1>
           

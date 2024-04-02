@@ -79,7 +79,7 @@ const Chats = ({item}) => {
 
   return (
    <div className="">
-    {isLoading ? "loading" : 
+    {isLoading ? <img src='/images/loading.svg' alt='Loading' className='h-[85px] m-auto' /> : 
       error ? "Something went wrong!" : (<div name="container" className="" >
       <h1 className="font-amaze font-semibold text-[30px] pl-5">Conversations</h1>
       <div name="top" className="flex justify-between p-1 gap-2 px-6" >
