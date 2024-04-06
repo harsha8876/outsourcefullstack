@@ -19,8 +19,8 @@ const Post = () => {
         <div className="w-full max-h-[400px]">
           <img src={post.img} alt="" className="w-full h-full object-cover" />
         </div>
-        <h1 className="text-4xl text-gray-700 m-auto p-9">{post.title}</h1>
-        <p className="text-lg text-justify leading-9"  dangerouslySetInnerHTML={{ __html: post.desc }}>
+        <h1 className="md:text-4xl sm:text-2xl text-gray-700 m-auto p-9 ">{post.title}</h1>
+        <p className="md:text-lg sm:text-base text-justify leading-9"  dangerouslySetInnerHTML={{ __html: post.desc }}>
        
         </p>
       </div>
