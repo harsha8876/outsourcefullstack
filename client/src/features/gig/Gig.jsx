@@ -31,8 +31,11 @@ const Gig = () => {
       }),
       enabled: !!userId,
   })
-
-  
+ //for ContactMe
+  const contactSeller = () => {
+    const email = dataUser.email; 
+    window.location.href = `mailto:${email}`;
+  };
   return (
     <div name='gig' className=''>
       {isLoading ? <img src='/images/loading.svg' alt='Loading' className='h-[85px] m-auto' /> : 
@@ -106,7 +109,7 @@ const Gig = () => {
           <div className='flex flex-col justify-center w-full items-center xl:items-start'>
             <span className='font-amaze font-semibold text-gray-500'>{dataUser.username}</span>
             {!isNaN (data.totalStars / data.starNumber) && <><div className='flex gap-3 items-center'>{Array(Math.round(data.totalStars / data.starNumber)).fill().map((item, i)=>(<FaStar className='text-yellow-500' key={i}/>))}<span className='font-amaze font-medium text-[18px] text-gray-500'>{Math.round(data.totalStars / data.starNumber)}</span></div></>}
-            <button className='border-[#365486] text-[#365486] border-[1px] w-full p-2 font-medium hover:text-white hover:bg-[#365486] xl:w-[150px] xl:p-1'>Contact Me</button>
+            <button onClick={contactSeller} className='border-[#365486] text-[#365486] border-[1px] w-full p-2 font-medium hover:text-white hover:bg-[#365486] xl:w-[150px] xl:p-1'>Contact Me</button>
           </div>
         </div>
         <div className='border-gray-500 border-[1px] my-3 p-5'>

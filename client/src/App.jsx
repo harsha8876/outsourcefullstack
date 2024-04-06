@@ -25,6 +25,8 @@ import {
   RouterProvider,
   Outlet
 } from "react-router-dom";
+import Blog from './features/blog/Blog'
+import Post from './features/blog/Post'
 
 function App()
  {
@@ -92,6 +94,14 @@ function App()
         path: "/success",
         element: <Success />,
       },
+      {
+        path:"/blog",
+        element : <Blog/>
+      },
+      {
+        path:"/post/:id",
+        element : <Post/>
+      }
     ]
     },
   ]);

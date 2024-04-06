@@ -8,6 +8,7 @@ import messageRoute from './routes/message.route.js'
 import orderRoute from './routes/order.route.js'
 import reviewRoute from './routes/review.route.js'
 import authRoute from './routes/auth.route.js'
+import wishlistRoute from './routes/review.route.js'
 import cookieParser from "cookie-parser";
 import cors from "cors"
 
@@ -37,6 +38,7 @@ app.use("/api/messages", messageRoute);
 app.use("/api/orders", orderRoute);
 app.use("/api/reviews", reviewRoute);
 app.use("/api/conversations", conversationRoute);
+
 
 app.use((err,req,res,next)=>{
   const errorStatus = err.status || 500

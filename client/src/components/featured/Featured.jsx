@@ -1,6 +1,6 @@
 import React from 'react'
 import { FaMagnifyingGlass } from "react-icons/fa6";
-import { useNavigate } from 'react-router-dom';
+import { useNavigate , Link} from 'react-router-dom';
 import { useState } from 'react';
 
 const Featured = () => {
@@ -31,13 +31,11 @@ const Featured = () => {
          </div>
          <div name="searchbutton" className='bg-[#0F1035] text-white p-3 rounded-r-lg hover:bg-[#365486]'><button onClick={handleSubmit} >Search</button></div>
          </div>
-         <div name="popular" className='flex gap-7 font-amaze flex-wrap md:pt-6'>
-            <span className='text-[#0F1035]'>Popular:</span>
-            <button className='forpopular'>web design</button>
-            <button className='forpopular'>wordpress</button>
-            <button className='forpopular'>animation</button>
-            <button className='forpopular'>databases</button>
-            <button className='forpopular'>branding</button>
+         <div name="popular" className='flex gap-7 font-amaze flex-wrap md:pt-6 '>
+            <span className='text-[#0F1035] '>Popular:</span>
+            <Link to="/gigs?cat=webdevelopment" className='forpopular'>web design</Link>
+            <Link to="/gigs?cat=photography" className='forpopular'>Photography</Link>
+            <Link to="/gigs?cat=voiceover" className='forpopular'>Voice Over</Link>
          </div>
       </div>
       <div name="right" className='order-1 m-3 md:order-2'>
