@@ -3,7 +3,7 @@ import Gigcard from '../../components/gigcard/Gigcard';
 import { FaAngleDown } from "react-icons/fa6";
 import { useQuery } from "@tanstack/react-query";
 import newRequest from '../../utils/newRequest';
-import { useLocation } from 'react-router-dom';
+import { Link, useLocation } from 'react-router-dom';
 import { categories } from '../../data.js';
 
 const Gigs = () => {
@@ -58,7 +58,7 @@ const Gigs = () => {
   return (
     <div name='gigs' className=''>
       <div name='container' className='m-5 md:flex md:flex-col md:gap-[15px] md:px-[100px]'>
-        <span name='breadcrumbs' className='font-amaze text-gray-500 text-sm font-medium'>{breadcrumbs}</span>
+        <span name='breadcrumbs' className='font-amaze text-gray-500 text-sm font-medium'><Link to="/">OUTSOURCE</Link>{breadcrumbs}</span>
         <h1 className='text-[#0D1B2A] text-[30px] font-semibold py-2'>{title}</h1>
         <p className='text-gray-600 font-amaze font-medium'>{description}</p>
 

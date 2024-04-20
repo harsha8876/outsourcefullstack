@@ -43,42 +43,42 @@ export const cards = [
 ];
 export const categories = {
   photography: {
-    breadcrumbs: 'OUTSOURCE > PHOTOGRAPHY',
+    breadcrumbs: ' > PHOTOGRAPHY',
     title: 'Photography Services',
     description: 'Explore our photography services and find the perfect photographer for your needs.'
   },
   interiordesign: {
-    breadcrumbs: 'OUTSOURCE > INTERIOR DESIGN',
+    breadcrumbs: ' > INTERIOR DESIGN',
     title: 'Interior Design Services',
     description: 'Discover interior design professionals to transform your space.'
   },
   logodesign: {
-    breadcrumbs: 'OUTSOURCE > LOGO DESIGN',
+    breadcrumbs: ' > LOGO DESIGN',
     title: 'Logo Design Services',
     description: 'Find talented designers to create unique and memorable logos for your brand.'
   },
   marketing: {
-    breadcrumbs: 'OUTSOURCE > MARKETING',
+    breadcrumbs: ' > MARKETING',
     title: 'Marketing Services',
     description: 'Boost your business with effective marketing strategies and campaigns.'
   },
   socialmarketing: {
-    breadcrumbs: 'OUTSOURCE > SOCIAL MEDIA MARKETING',
+    breadcrumbs: ' > SOCIAL MEDIA MARKETING',
     title: 'Social Media Marketing Services',
     description: 'Maximize your online presence and engagement with expert social media marketing.'
   },
   videoediting: {
-    breadcrumbs: 'OUTSOURCE > VIDEO EDITING',
+    breadcrumbs: ' > VIDEO EDITING',
     title: 'Video Editing Services',
     description: 'Enhance your videos with professional editing and post-production services.'
   },
   voiceover: {
-    breadcrumbs: 'OUTSOURCE > VOICEOVER',
+    breadcrumbs: ' > VOICEOVER',
     title: 'Voiceover Services',
     description: 'Find the perfect voice talent for your project, from narration to character voices.'
   },
   webdevelopment: {
-    breadcrumbs: 'OUTSOURCE > WEB DEVELOPMENT',
+    breadcrumbs: ' > WEB DEVELOPMENT',
     title: 'Web Development Services',
     description: 'Create stunning websites and web applications with skilled web developers.'
   }
