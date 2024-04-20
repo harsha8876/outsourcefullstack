@@ -57,7 +57,10 @@ const Footer = () => {
         setShowFeatures5(!showFeatures5);
       };
 
-
+      const handleLinkClick = () => {
+        resetDropdowns(isMobile);
+        window.scrollTo(0, 0); 
+      };
   return (
     <div>
     <div name="footer" className='bg-[#0F1035] flex flex-col absolute w-full'>
@@ -66,34 +69,28 @@ const Footer = () => {
           <div className='forfootfea' onClick= {isMobile ? handleBarsClick1 : null}><span>Categories</span>
           <FaAngleDown className={`md:hidden transition duration-150 ease-in-out transform ${showFeatures1 ? 'rotate-180' : ''}`}/></div>
           {showFeatures1 && <div className='flex flex-col gap-1 cursor-pointer'>
-            <span className='hover:bg-[#365486]'>Graphics & Design</span>
-            <span className='hover:bg-[#365486]'>Digital Marketing</span>
-            <span className='hover:bg-[#365486]'>Photography</span>
-            <span className='hover:bg-[#365486]'>Video & animation</span>
-            <span className='hover:bg-[#365486]'>Business</span>
-            <span className='hover:bg-[#365486]'>Music & audio</span>
+            <Link to="/gigs?cat=logodesign" className='hover:bg-[#365486]' onClick={handleLinkClick}>Logo Design</Link>
+            <Link to="/gigs?cat=socialmarketing" className='hover:bg-[#365486]' onClick={handleLinkClick}>Social Marketing</Link>
+            <Link to="/gigs?cat=photography" className='hover:bg-[#365486]' onClick={handleLinkClick}>Photography</Link>
+            <Link to="/gigs?cat=webdevelopment" className='hover:bg-[#365486]' onClick={handleLinkClick}>Web Development</Link>
           </div>}
                 </div>
         <div name='heading' className='forfootheads group'>
         <div className='forfootfea' onClick= {isMobile ? handleBarsClick2 : null}><span>About</span>
         <FaAngleDown className={`md:hidden transition duration-150 ease-in-out transform ${showFeatures2 ? 'rotate-180' : ''}`}/></div>
         {showFeatures2 && <div className='flex flex-col gap-1 cursor-pointer'>
-            <span className='hover:bg-[#365486]'>Careers</span>
-            <span className='hover:bg-[#365486]'>Partnerships</span>
-            <span className='hover:bg-[#365486]'>Privacy policy</span>
-            <span className='hover:bg-[#365486]'>Terms of service</span>
+            <Link to="/privacypolicy" onClick={handleLinkClick} className='hover:bg-[#365486]'>Privacy policy</Link >
+            <Link to="/terms&service" onClick={handleLinkClick} className='hover:bg-[#365486]'>Terms of service</Link>
           </div>}
           
         </div>
         <div name='heading' className='forfootheads group'>
           <div className='forfootfea' onClick= {isMobile ? handleBarsClick3 : null}>
-          <span>Support and Education</span>
+          <span>Support</span>
           <FaAngleDown className={`md:hidden transition duration-150 ease-in-out transform ${showFeatures3 ? 'rotate-180' : ''}`}/></div>
           {showFeatures3 && <div className='flex flex-col gap-1 cursor-pointer'>
-            <span className='hover:bg-[#365486]'>Help & Support</span>
-            <span className='hover:bg-[#365486]'>Selling on Outsource</span>
-            <span className='hover:bg-[#365486]'>Buying on Outsource</span>
-            <span className='hover:bg-[#365486]'>Outsource Guides</span>
+            <Link to="/support" onClick={handleLinkClick} className='hover:bg-[#365486]'>Help & Support</Link>
+            <Link to="/contactus"  onClick={handleLinkClick} className='hover:bg-[#365486]'>Contact Us</Link>
           </div>}
           
         </div>
@@ -101,22 +98,19 @@ const Footer = () => {
         <div className='forfootfea' onClick= {isMobile ? handleBarsClick4 : null}><span>Community</span>
         <FaAngleDown className={`md:hidden transition duration-150 ease-in-out transform ${showFeatures4 ? 'rotate-180' : ''}`}/></div>
         {showFeatures4 && <div className='flex flex-col gap-1 cursor-pointer'>
-            <span className='hover:bg-[#365486]'>Community hub</span>
-            <span className='hover:bg-[#365486]'>Invite a freind</span>
-            <span className='hover:bg-[#365486]'>Become a seller</span>
-            <span className='hover:bg-[#365486]'>Affiliate</span>
+            {/* <span className='hover:bg-[#365486]'>Community hub</span> */}
+            <Link to="/blog" onClick={handleLinkClick} className='hover:bg-[#365486]'>Outsource Blog</Link>
+            <Link to="/social" onClick={handleLinkClick} className='hover:bg-[#365486]'>Social</Link>
           </div>}
           
         </div>
         <div name='heading' className='forfootheads group'>
-        <div className='forfootfea' onClick= {isMobile ? handleBarsClick5 : null}><span>Business</span>
+        <div className='forfootfea' onClick= {isMobile ? handleBarsClick5 : null}><span>About us</span>
         <FaAngleDown className={`md:hidden transition duration-150 ease-in-out transform ${showFeatures5 ? 'rotate-180' : ''}`}/></div>
         {showFeatures5 && <div className='flex flex-col gap-1 cursor-pointer'>
-            <span className='hover:bg-[#365486]'>About us</span>
-            <span className='hover:bg-[#365486]'>Contact sales</span>
-            <span className='hover:bg-[#365486]'>Pro</span>
-            <span className='hover:bg-[#365486]'>Certified</span>
-            <span className='hover:bg-[#365486]'>Agency</span>
+            <Link to="/faqs" onClick={handleLinkClick} className='hover:bg-[#365486]'>FAQs</Link>
+            <Link to="/purpose" onClick={handleLinkClick} className='hover:bg-[#365486]'>Purpose and Goals</Link>
+            <Link to="/working" onClick={handleLinkClick} className='hover:bg-[#365486]'>How It Works</Link>
           </div>}
           
         </div>

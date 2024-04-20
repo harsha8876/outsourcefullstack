@@ -27,11 +27,19 @@ import {
 } from "react-router-dom";
 import Blog from './features/blog/Blog'
 import Post from './features/blog/Post'
+import PrivacyPolicy from './components/about/PrivacyPolicy'
+import Termsofser from './components/about/Termsofser'
+import Support from './components/support/Support'
+import ContactUs from './components/support/ContactUs'
+import SocialHub from './components/community/SocialHub'
+import Faqs from './components/about/Faqs'
+import Purpose from './components/about/Purpose'
+import Working from './components/about/Working'
 
 function App()
  {
   const queryClient = new QueryClient()
-
+  
    const Layout=()=>{
     return ( <>
     <QueryClientProvider client={queryClient}>
@@ -43,6 +51,7 @@ function App()
    }
 
   const router = createBrowserRouter([
+    
     {
       path: "/",
       element:<Layout/> ,
@@ -101,11 +110,43 @@ function App()
       {
         path:"/post/:id",
         element : <Post/>
-      }
+      },
+      {
+        path:"/privacypolicy",
+        element : <PrivacyPolicy/>
+      },
+      {
+        path : "/terms&service",
+        element:<Termsofser/>
+      },
+      {
+        path : "/support",
+        element:<Support/>
+      },
+      {
+        path : "/contactus",
+        element:<ContactUs/>
+      },
+      {
+        path : "/social",
+        element:<SocialHub/>
+      },
+      {
+        path : "/faqs",
+        element:<Faqs/>
+      },
+      {
+        path : "/purpose",
+        element:<Purpose/>
+      },
+      {
+        path : "/working",
+        element:<Working/>
+      },
     ]
     },
   ]);
-
+  
   return (
     <div >
       <RouterProvider router={router} />

@@ -135,7 +135,9 @@ const checkfull=()=>{
     slider.scrollLeft=slider.scrollLeft+500;
   }
 
-  
+  const handlehomeClick = () => {
+    window.scrollTo(0, 0); 
+  };
 return (
     <div className='sticky top-0 z-[999] w-full'>
       <div name='container' className='flex items-center bg-[#0D1B2A] h-[4pc] justify-between p-3 md:justify-around shadow-lg sticky top-0 z-[999]'>
@@ -143,7 +145,7 @@ return (
          <div name='opt' className='object-cover cursor-pointer relative order-1 md:order-2' ref={MenuDropdownRef}>
           <FaBars className='text-[#E0E1DD] h-[25px] w-[25px] md:hidden' onClick={handleBarsClick} />
          {showFeatures && <><div name="features" className={isMobile ? 'fordrop absolute top-[2pc] left-3 z-20' : 'flex flex-row justify-between gap-7'}>
-          <div className={isMobile ?'foroptspa group':'dropd group'}>
+          {/* <div className={isMobile ?'foroptspa group':'dropd group'}>
                 <span className={isMobile ?'':'fortext'}>Business</span>
                 <FaAngleDown className={isMobile ?'group-hover:rotate-180':'forangle'}/>
               </div>
@@ -153,17 +155,17 @@ return (
               </div>
               {!currentUser?.isSeller && <div name='freelance' className={isMobile ?'foroptspa':'dropd'}>
               <span className={isMobile ?'':'fortext'}>FreeLance</span>
-              </div>}
-              {!currentUser && <div className={isMobile ?'foroptspa':'dropd'}>
+              </div>} */}
+              {/* {!currentUser && <div className={isMobile ?'foroptspa':'dropd'}>
                 <Link to="/login" className={isMobile ?'':'fortext'}>Sign In</Link>
-              </div> } 
+              </div> }  */}
               
          </div></>}
          </div>
 
         
          <div name='logo' className='order-2 md:order-1 border-none outline-none'>
-          <Link to="/">
+          <Link to="/" onClick={handlehomeClick}>
          <img src='/images/logo-name.png' alt='OUTSOURCE' className='h-[42px] w-[11pc] md:w-[12pc] -mr-3 cursor-pointer hover:scale-105 border-none outline-none'></img>
          </Link>
          </div>

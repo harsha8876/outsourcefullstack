@@ -6,8 +6,11 @@ import { useParams } from "react-router-dom";
 import CheckoutForm from "../../components/checkoutForm/CheckoutForm";
 
 const stripePromise = loadStripe("pk_test_51OwKeuSDvlVISlwf7HqxogdSrXqDRLp4gNDjomFevNvyfvH401GwXmRqi1UNIcih4TNOHpoq4HEAiCDX6xCYRR8u0027U985Ch");
+
 const Pay = () => {
     const [clientSecret, setClientSecret] = useState("");
+    const [error, setError] = useState("");
+
     const { id } = useParams();
 
     useEffect(() => {
@@ -18,29 +21,36 @@ const Pay = () => {
             );
             setClientSecret(res.data.clientSecret);
           } catch (err) {
-            console.log(err);
+            if (err.response && err.response.status === 401) {
+              setError("Please login to continue.");
+            } else {
+              setError("An error occurred while loading payment details.");
+              console.log(err);
+            }
           }
         };
         makeRequest();
       }, []);
 
-      const appearance = {
+    const appearance = {
         theme: 'stripe',
-      };
-      const options = {
+    };
+    const options = {
         clientSecret,
         appearance,
-      };
+    };
     
-  return (
-    <div name="pay" className=''>
-      {clientSecret && (
-        <Elements options={options} stripe={stripePromise}>
-          <CheckoutForm />
-        </Elements>
-      )}
-    </div>
-  )
-}
+    return (
+        <div name="pay">
+            {error ? (
+                <p>{error}</p>
+            ) : clientSecret && (
+                <Elements options={options} stripe={stripePromise}>
+                    <CheckoutForm />
+                </Elements>
+            )}
+        </div>
+    );
+};
 
-export default Pay
+export default Pay;

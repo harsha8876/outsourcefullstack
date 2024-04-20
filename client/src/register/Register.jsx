@@ -1,7 +1,7 @@
 import React, { useState } from 'react'
 import upload from '../utils/upload';
 import newRequest from  '../utils/newRequest';
-import {useNavigate} from "react-router-dom";
+import {Link, useNavigate} from "react-router-dom";
 
 
 const Register = () => {
@@ -83,7 +83,11 @@ const Register = () => {
         <input name="phone" type='text' onChange={handleChange} className='text-gray-500 font-medium border-gray-400 border-[1px] p-2 focus:border-blue-400 focus:outline-none' placeholder='Enter your number'/>
         <label className='text-gray-500 font-medium'>Description</label>
         <textarea name="desc" onChange={handleChange} className='text-gray-500 font-medium border-gray-400 border-[1px] p-2 focus:border-blue-400 focus:outline-none' placeholder='Enter your description'/>
-      </div></div>
+        <div name="signin" className='flex items-center p-1 text-[18px]'>
+          <h3>Already have an account? </h3> <Link to="/login" className='p-2 text-[blue] underline'>Sign in</Link>
+        </div>
+      </div>
+      </div>
 
       <div className='w-full md:w-[47vw]'>
         <button className='bg-[#0D1B2A] text-white rounded-lg hover:bg-[#365486] font-medium p-2 w-full'>Register</button>
