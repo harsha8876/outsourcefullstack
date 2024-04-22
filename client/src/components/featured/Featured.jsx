@@ -24,7 +24,7 @@ const Featured = () => {
          <div name="searchInput" className='flex bg-white rounded-l-lg'>
             <div name="searchicon" className='p-3'><FaMagnifyingGlass className='h-[20px] w-[20px] hover:scale-105'/></div>
             <input  type="text" placeholder="Search for a service..." 
-             className='p-3 border-none outline-none md:w-[30vw]'
+             className='p-3 border-none outline-none md:w-[30vw] focus:ring-0w'
              onChange={(e) => setInput(e.target.value)}
              onKeyDown={handleKeyDown}
              />

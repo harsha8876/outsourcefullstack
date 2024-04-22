@@ -60,7 +60,7 @@ const Register = () => {
         <label className='text-gray-500 font-medium'>Password</label>
         <input name="password" type='password' onChange={handleChange} placeholder='Enter your password' className='text-gray-500 font-medium border-gray-400 border-[1px] p-2 focus:border-blue-400 focus:outline-none w-full'/>
         <label className='text-gray-500 font-medium'>Profile picture</label>
-        <input type='file' onChange={(e)=>setFile(e.target.files[0])}  className='text-gray-500 font-medium border-gray-400 border-[1px] p-2 focus:border-blue-400 focus:outline-none w-full'/>
+        <input type='file' onChange={(e)=>setFile(e.target.files[0])}  className='text-gray-500 font-medium border-gray-400 border-[1px]  focus:border-blue-400 focus:outline-none w-full'/>
         <label className='text-gray-500 font-medium'>Country</label>
         <input name="country" type='text' onChange={handleChange} className='text-gray-500 font-medium border-gray-400 border-[1px] p-2 focus:border-blue-400 focus:outline-none w-full' placeholder='e.g., United States'/>
         </div>

@@ -41,7 +41,7 @@ const Reviews = ({gigId}) => {
         {isLoading ? <img src='/images/loading.svg' alt='Loading' className='h-[85px] m-auto' /> : error ? "Something went wrong!" : data.map((review) => 
         <Review key={review._id} review={review}/>)}
         <div name="add">
-        <h3 className='font-amaze font-semibold text-[#365486] text-[18px] py-4'>Add a review</h3>
+        <h3 className='font-amaze font-semibold text-[#365486] text-[18px] py-4'>Add a review</h3>
         <form action="" onSubmit={handleSubmit} className='flex flex-col gap-2' name="addreview">
           <div className='w-full flex justify-between'>
           <input type="text" placeholder="write your opinion" className='w-full rounded-lg'/>
