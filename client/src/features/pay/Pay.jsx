@@ -14,23 +14,26 @@ const Pay = () => {
     const { id } = useParams();
 
     useEffect(() => {
-        const makeRequest = async () => {
-          try {
-            const res = await newRequest.post(
-              `/orders/create-payment-intent/${id}`
+      const makeRequest = async () => {
+        try {
+          const res = await newRequest.post(
+            `/orders/create-payment-intent/${id}`
+          );
+          setClientSecret(res.data.clientSecret);
+        } catch (err) {
+          if (err.response && err.response.status === 401) {
+            setError(
+              <img src="../../images/error-animation.gif" alt="Error Animation" className="h-[500px] m-auto" />
             );
-            setClientSecret(res.data.clientSecret);
-          } catch (err) {
-            if (err.response && err.response.status === 401) {
-              setError("Please login to continue.");
-            } else {
-              setError("An error occurred while loading payment details.");
-              console.log(err);
-            }
+          } else {
+            setError("An error occurred while loading payment details.");
+            console.log(err);
           }
-        };
-        makeRequest();
-      }, []);
+        }
+      };
+      makeRequest();
+  }, []);
+  
 
     const appearance = {
         theme: 'stripe',
@@ -41,7 +44,7 @@ const Pay = () => {
     };
     
     return (
-        <div name="pay">
+        <div name="pay" className="bg-[#F5F5F5]">
             {error ? (
                 <p>{error}</p>
             ) : clientSecret && (
