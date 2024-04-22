@@ -3,6 +3,9 @@ import { Link } from 'react-router-dom';
 import { Posts } from '../../data.js';
 
 const Blog = () => {
+  const handleBlogClick = () => {
+    window.scrollTo(0, 0); 
+  };
   return (
     <div name="home" className=" p-10 md:p-20 mb-16">
       <div className="p-5 mr-auto">
@@ -26,7 +29,7 @@ const Blog = () => {
               <div className="absolute top-2 left-[-20px] w-full h-full bg-[#DCF2F1] rounded-xl z-[-1]"></div>
             </div>
             <div name="content" className="flex-3 line">
-              <Link to={`/post/${post.id}`}>
+              <Link to={`/post/${post.id}`} onClick={handleBlogClick}>
                 <h1 className="text-2xl md:text-4xl font-bold pb-5">{post.title}</h1>
               
               <p className="text-base md:text-lg pb-5">{post.desc.substring(0, 250)}....</p>
