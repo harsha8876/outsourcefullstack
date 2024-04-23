@@ -1,4 +1,4 @@
-import React from 'react'
+import React, { useEffect, useState } from 'react'
 import { FaStar} from "react-icons/fa6";
 import { FaClock, FaArrowsRotate, FaCheck } from "react-icons/fa6";
 import { Carousel } from 'flowbite-react';
@@ -13,7 +13,7 @@ const Gig = () => {
 
   const {id}=useParams();
 
-  const { isLoading, error, data} = useQuery({
+  const { isLoading, error, data } = useQuery({
     queryKey: ['gig'],
     queryFn: () =>
       newRequest.get(`/gigs/single/${id}`).then(res=> {
@@ -21,9 +21,10 @@ const Gig = () => {
       })
   })
 
+
   const userId=data?.userId;
 
-  const { isLoading:isLoadingUser , error:errorUser, data:dataUser} = useQuery({
+  const { isLoading:isLoadingUser , error:errorUser, data:dataUser,refetch: refetchUser} = useQuery({
     queryKey: ['user'],
     queryFn: () =>
       newRequest.get(`/users/${userId}`).then(res=> {
@@ -31,17 +32,24 @@ const Gig = () => {
       }),
       enabled: !!userId,
   })
- //for ContactMe
+
+  useEffect(() => {
+    if (userId) {
+      refetchUser();
+    }
+  }, [id, userId, refetchUser]);
+
   const contactSeller = () => {
     const email = dataUser.email; 
     window.location.href = `mailto:${email}`;
   };
+  const categoryLink = data ? `/gigs?cat=${encodeURIComponent(data.cat)}` : '';
   return (
     <div name='gig' className=''>
       {isLoading ? <img src='/images/loading.svg' alt='Loading' className='h-[85px] m-auto' /> : 
       error ? "Something went wrong!" : <div name='container' className='m-5 flex flex-col xl:mx-[125px] xl:flex-row xl:flex-wrap xl:relative'>
       <div name='left' className='flex flex-col xl:w-[48vw]'>
-        <span name='breadcrumbs' className='font-amaze text-gray-500 text-sm font-medium'>OUTSOURCE &gt; {data.cat.toUpperCase()}</span>
+        <span name='breadcrumbs' className='font-amaze text-gray-500 text-sm font-medium'><Link to={categoryLink}> {data.cat.toUpperCase()} &gt;</Link></span>
           <h1 className='text-[#0D1B2A] text-[30px] font-semibold py-7 leading-none'>
             {data.title}</h1>
           {isLoadingUser ? (<img src='/images/loading.svg' alt='Loading' className='h-[85px] m-auto' />) : errorUser ? ("Something went wrong!") :<div name='profile' className='flex items-center gap-2'>

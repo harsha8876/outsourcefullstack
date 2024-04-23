@@ -4,6 +4,34 @@ import newRequest from  '../utils/newRequest';
 import {Link, useNavigate} from "react-router-dom";
 
 
+const countries = [
+  { label: 'United States', value: 'United States' },
+  { label: 'Canada', value: 'Canada' },
+  { label: 'United Kingdom', value: 'United Kingdom' },
+  { label: 'Germany', value: 'Germany' },
+  { label: 'France', value: 'France' },
+  { label: 'Australia', value: 'Australia' },
+  { label: 'China', value: 'China' },
+  { label: 'India', value: 'India' },
+  { label: 'Japan', value: 'Japan' },
+  { label: 'South Korea', value: 'South Korea' },
+  { label: 'Brazil', value: 'Brazil' },
+  { label: 'Mexico', value: 'Mexico' },
+  { label: 'Russia', value: 'Russia' },
+  { label: 'South Africa', value: 'South Africa' },
+  { label: 'Nigeria', value: 'Nigeria' },
+  { label: 'Egypt', value: 'Egypt' },
+  { label: 'Saudi Arabia', value: 'Saudi Arabia' },
+  { label: 'Turkey', value: 'Turkey' },
+  { label: 'United Arab Emirates', value: 'United Arab Emirates' },
+  { label: 'Pakistan', value: 'Pakistan' },
+  { label: 'Indonesia', value: 'Indonesia' },
+  { label: 'Argentina', value: 'Argentina' },
+  { label: 'Colombia', value: 'Colombia' },
+  { label: 'Chile', value: 'Chile' },
+  { label: 'Peru', value: 'Peru' },
+];
+
 const Register = () => {
 
   const [file, setFile]=useState(null);
@@ -62,7 +90,20 @@ const Register = () => {
         <label className='text-gray-500 font-medium'>Profile picture</label>
         <input type='file' onChange={(e)=>setFile(e.target.files[0])}  className='text-gray-500 font-medium border-gray-400 border-[1px]  focus:border-blue-400 focus:outline-none w-full'/>
         <label className='text-gray-500 font-medium'>Country</label>
-        <input name="country" type='text' onChange={handleChange} className='text-gray-500 font-medium border-gray-400 border-[1px] p-2 focus:border-blue-400 focus:outline-none w-full' placeholder='e.g., United States'/>
+        {/* <input name="country" type='text' onChange={handleChange} className='text-gray-500 font-medium border-gray-400 border-[1px] p-2 focus:border-blue-400 focus:outline-none w-full' placeholder='e.g., United States'/> */}
+        <label className='text-gray-500 font-medium'>Country</label>
+            <select
+              name='country'
+              onChange={handleChange}
+              className='text-gray-500 font-medium border-gray-400 border-[1px] p-2 focus:border-blue-400 focus:outline-none w-full'
+            >
+              <option value=''>Select your country</option>
+              {countries.map((country, index) => (
+                <option key={index} value={country.value}>
+                  {country.label}
+                </option>
+              ))}
+            </select>
         </div>
 
         

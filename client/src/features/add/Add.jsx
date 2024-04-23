@@ -90,18 +90,20 @@ const Add = () => {
               <option value="voiceover">Voiceover</option>
               <option value="webdevelopment">Web development</option>
             </select>
-            <div name="images" className="flex flex-col justify-between md:items-center gap-2 m-auto">
-              <div name="imagesInputs" className="flex flex-col md:flex-row">
-                  <div className="flex flex-col md:flex-row">
-                      <label htmlFor="" className="p-2 m-auto">Cover Image</label>
-                      <input type="file" onChange={(e) => setSingleFile(e.target.files[0])} className="rounded-lg focus:border-blue-400 focus:outline-none border-white border-[1px] p-1" />
+            <div name="images" className="flex flex-col justify-between bg-gray-200 rounded-lg focus:border-blue-400 focus:outline-none border-white border-[1px]">
+              <div name="imagesInputs" className="flex flex-col p-3">
+                  <div className="flex flex-col">
+                      <label htmlFor="" className="p-2">Cover Image</label>
+                      <input type="file" onChange={(e) => setSingleFile(e.target.files[0])} className="rounded-lg focus:border-blue-400 focus:outline-none border-white border-[1px]" />
                   </div>
-                  <div className="flex flex-col md:flex-row">
-                      <label htmlFor="" className="p-2 m-auto">Upload Images</label>
-                      <input type="file" onChange={(e) => setFiles(e.target.files)} multiple className="rounded-lg focus:border-blue-400 focus:outline-none border-white border-[1px] p-1" />
+                  <div className="flex flex-col md:flex-col">
+                      <label htmlFor="" className="p-2">Upload Images</label>
+                      <input type="file" onChange={(e) => setFiles(e.target.files)} multiple className="rounded-lg focus:border-blue-400 focus:outline-none border-white border-[1px]" />
                   </div>
               </div>
-              <button className="p-3 font-amaze font-medium bg-[#0F1035] text-white  hover:bg-[#365486]  rounded-lg focus:border-blue-400 focus:outline-none border-white border-[1px]" onClick={handleUpload}> {uploading ? "uploading" : "Upload"}</button>
+              <div className="flex justify-center pb-3">
+                <button className="p-3 font-amaze font-medium bg-[#0F1035] text-white hover:bg-[#365486] rounded-lg focus:border-blue-400 focus:outline-none border-white border-[1px] w-[270px]"  onClick={handleUpload}> {uploading ? "uploading" : "Upload"}</button>
+              </div>
           </div>
 
             <label htmlFor="">Description</label>

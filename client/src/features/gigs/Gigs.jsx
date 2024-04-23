@@ -50,7 +50,11 @@ const Gigs = () => {
 
   useEffect(() => {
     refetch();
-  }, [location.search]); 
+  }, [location.search,sort]); 
+
+  useEffect(() => {
+    refetch();
+  }, []);
 
   const category = new URLSearchParams(location.search).get('cat');
   const { breadcrumbs, title, description } = categories[category] || {};
@@ -72,13 +76,13 @@ const Gigs = () => {
           <div name='right' className='flex gap-2 items-center pt-2 md:w-1/2 md:justify-end'>
             <span className='font-amaze font-semibold text-[#0D1B2A]'>Sort By: </span>
             <div className='flex items-center gap-2 relative group cursor-pointer' onClick={() => setOpen(!open)} ref={dropdownRef}>
-              <span className='text-gray-500 font-medium '>{sort === "sales" ? "Best Selling" : "Newest"}</span>
+              <span className='text-gray-500 font-medium ' >{sort === "sales" ? "Best Selling" : "Newest"}</span>
               <FaAngleDown className='text-gray-500 font-medium group-hover:rotate-180 transition duration-150 ease-in-out transform' />
 
               {open && <div name='rightdrop' className='fordrop absolute top-5'>
                 {sort === "sales" ? <span className='foroptspa' onClick={() => reSort("createdAt")}>Newest</span> :
                   <span className='foroptspa' onClick={() => reSort("sales")}>Best Selling</span>
-                }<span className='foroptspa' onClick={() => reSort("sales")}>Popular</span>
+                }
               </div>}</div>
 
           </div>
