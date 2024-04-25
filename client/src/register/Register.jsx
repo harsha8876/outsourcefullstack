@@ -2,7 +2,8 @@ import React, { useState } from 'react'
 import upload from '../utils/upload';
 import newRequest from  '../utils/newRequest';
 import {Link, useNavigate} from "react-router-dom";
-
+import { FaRegEyeSlash } from "react-icons/fa";
+import { FaRegEye } from "react-icons/fa";
 
 const countries = [
   { label: 'United States', value: 'United States' },
@@ -44,7 +45,7 @@ const Register = () => {
     isSeller:false,
     desc:""
   });
-
+  const [showPassword, setShowPassword] = useState(false);
   const navigate = useNavigate()
 
   const handleChange = (e) =>{
@@ -86,11 +87,25 @@ const Register = () => {
         <label className='text-gray-500 font-medium'>Email</label>
         <input name="email" type='email' onChange={handleChange} className='text-gray-500 font-medium border-gray-400 border-[1px] p-2 focus:border-blue-400 focus:outline-none w-full' placeholder='Enter your email address'/>
         <label className='text-gray-500 font-medium'>Password</label>
-        <input name="password" type='password' onChange={handleChange} placeholder='Enter your password' className='text-gray-500 font-medium border-gray-400 border-[1px] p-2 focus:border-blue-400 focus:outline-none w-full'/>
+        {/* <input name="password" type='password' onChange={handleChange} placeholder='Enter your password' className='text-gray-500 font-medium border-gray-400 border-[1px] p-2 focus:border-blue-400 focus:outline-none w-full'/> */}
+        <div className='relative'>
+        <input
+            name="password"
+            type={showPassword ? 'text' : 'password'}
+            onChange={handleChange}
+            placeholder='Enter your password'
+            className='text-gray-500 font-medium border-gray-400 border-[1px] p-2 focus:border-blue-400 focus:outline-none w-full pr-10'
+          />
+          <button
+            type="button"
+            onClick={() => setShowPassword(!showPassword)}
+            className='absolute top-0 right-0 h-full w-10 flex items-center justify-center cursor-pointer text-gray-500'
+          >
+            {showPassword ? <FaRegEyeSlash className="h-5 w-5" /> : <FaRegEye className="h-5 w-5" />}
+          </button>
+          </div>
         <label className='text-gray-500 font-medium'>Profile picture</label>
         <input type='file' onChange={(e)=>setFile(e.target.files[0])}  className='text-gray-500 font-medium border-gray-400 border-[1px]  focus:border-blue-400 focus:outline-none w-full'/>
-        <label className='text-gray-500 font-medium'>Country</label>
-        {/* <input name="country" type='text' onChange={handleChange} className='text-gray-500 font-medium border-gray-400 border-[1px] p-2 focus:border-blue-400 focus:outline-none w-full' placeholder='e.g., United States'/> */}
         <label className='text-gray-500 font-medium'>Country</label>
             <select
               name='country'
