@@ -14,25 +14,6 @@ const Gigcard = ({item}) => {
           return res.data;
         }),
     });
-    const [isWishlisted, setIsWishlisted] = useState(false);
-
-    const handleToggleWishlist = async () => {
-      event.preventDefault(); // Prevent default link behavior
-    event.stopPropagation(); // Stop event propagation
-      try {
-        if (isWishlisted) {
-        
-          await removeFromWishlist(item.userId, item._id);
-          setIsWishlisted(false);
-        } else {
- 
-          await addToWishlist(item.userId, item._id);
-          setIsWishlisted(true);
-        }
-      } catch (error) {
-        console.error('Error toggling wishlist:', error);
-      }
-    };
 
   return (
     <div className='m-3'>
@@ -52,9 +33,9 @@ const Gigcard = ({item}) => {
             </div>
             <hr className='w-full h-3'></hr>
             <div name='details'  className='text-gray-500 px-2 flex justify-between'>
-               <div onMouseDown={handleToggleWishlist}>
-               <FaHeart onClick={handleToggleWishlist} style={{ color: isWishlisted ? 'red' : 'inherit', cursor: 'pointer' }} />
-               </div>
+               {/* <div >
+               <FaHeart/>
+               </div> */}
                <div name="price" className='flex gap-1 pb-2 items-center px-2'>
                <span className='font-amaze font-semibold text-[15px]'>Staring At</span>
                <h2 className='font-amaze font-semibold text-[15px]'>₹{(item.price)

@@ -13,7 +13,7 @@ const ContactUs = () => {
         <div className="text-lg">
           <h2 className="text-xl font-bold mb-4">Email Support:</h2>
           <p className="mb-4">
-            For general inquiries, assistance with your account, or any other questions, you can reach out to our support team via email at <a href="mailto:support@outsource.com" className="text-blue-500 underline">support@outsource.com</a>. We strive to respond to all emails promptly during our business hours.
+            For general inquiries, assistance with your account, or any other questions, you can reach out to our support team via email at <a href="mailto:outsource809@gmail.com" className="text-blue-500 underline">outsource809@gmail.com</a>. We strive to respond to all emails promptly during our business hours.
           </p>
           <h2 className="text-xl font-bold mb-4">Social Media:</h2>
           <p className="mb-4">

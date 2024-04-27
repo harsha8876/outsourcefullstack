@@ -25,7 +25,7 @@ const Faqs = () => {
           </p>
           <h2 className="text-xl font-bold mb-4">6. How do I contact customer support?</h2>
           <p>
-            If you have any further questions or encounter any issues while using Outsource, our customer support team is here to help. You can contact us via email at <a href="mailto:support@outsource.com" className="text-blue-500 underline">support@outsource.com</a>.
+            If you have any further questions or encounter any issues while using Outsource, our customer support team is here to help. You can contact us via email at <a href="mailto:outsource809@gmail.com" className="text-blue-500 underline">outsource809@gmail.com</a>.
           </p>
         </div>
       </div>

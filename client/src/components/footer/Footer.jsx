@@ -121,10 +121,18 @@ const Footer = () => {
       <Link to="/"><img src='/images/logo-name.png' alt='OUTSOURCE' className='h-[35px] w-[130px]'></img></Link>
         <span className='pt-2 text-gray-500 font-amaze font-normal'>Outsource - Freelance Marketplace application</span>
         <div className='flex p-2 text-white gap-5'>
-          <FaFacebook className='h-[20px] w-[20px]'/>
-          <FaInstagram className='h-[20px] w-[20px]'/>
-          <FaPinterest className='h-[20px] w-[20px]'/>
-          <FaXTwitter className='h-[20px] w-[20px]'/>
+          <a href="https://www.facebook.com/profile.php?id=61558851604355&is_tour_dismissed">
+            <FaFacebook className='h-[20px] w-[20px]'/>
+          </a>
+          <a href="https://www.instagram.com/outsource809">
+            <FaInstagram className='h-[20px] w-[20px]'/>
+          </a>
+          <a href="https://in.pinterest.com/outsource0004/">
+            <FaPinterest className='h-[20px] w-[20px]'/>
+          </a>
+          <a href="https://twitter.com/outsource809">
+            <FaXTwitter className='h-[20px] w-[20px]'/>
+          </a>
         </div>
       </div>
       </div>

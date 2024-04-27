@@ -85,6 +85,7 @@ const Add = () => {
               <option value="photography">Photography</option>
               <option value="interiordesign">Interior Design</option>
               <option value="logodesign">Logo Design</option>
+              <option value="dataentry">Data Entry</option>
               <option value="socialmarketing">Social Marketing</option>
               <option value="videoediting">Video Editing</option>
               <option value="voiceover">Voiceover</option>

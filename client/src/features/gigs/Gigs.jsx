@@ -87,7 +87,7 @@ const Gigs = () => {
 
           </div>
         </div>
-        <div name='cards' className='md:flex md:flex-wrap md:justify-between'>
+        <div name='cards' className='md:flex md:flex-wrap md:justify-start md:gap-10'>
           {isLoading ? <img src='/images/loading.svg' alt='Loading' className='h-[85px] m-auto' /> : error ? "Something went wrong!" : data.map((gig) => (
             <Gigcard key={gig._id} item={gig} />
           ))}</div>

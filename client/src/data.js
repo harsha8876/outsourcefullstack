@@ -16,9 +16,9 @@ export const cards = [
     category: 'logodesign'
   },
   {
-    id: 4,
-    img:'/images/marketing.png',
-    category: 'marketing'
+      id: 4,
+      img:'/images/dataentry.png',
+      category: 'dataentry'
   },
   {
     id: 5,
@@ -57,10 +57,10 @@ export const categories = {
     title: 'Logo Design Services',
     description: 'Find talented designers to create unique and memorable logos for your brand.'
   },
-  marketing: {
-    breadcrumbs: ' > MARKETING',
-    title: 'Marketing Services',
-    description: 'Boost your business with effective marketing strategies and campaigns.'
+  dataentry: {
+    breadcrumbs: ' > DATA ENTRY',
+    title: 'Data Entry',
+    description: 'Reliable freelance data entry service: fast, accurate, and tailored to your needs.'
   },
   socialmarketing: {
     breadcrumbs: ' > SOCIAL MEDIA MARKETING',
