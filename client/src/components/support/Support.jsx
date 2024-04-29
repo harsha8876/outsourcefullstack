@@ -13,7 +13,7 @@ const Support = () => {
           </p>
           <h2 className="text-xl font-bold mb-4">Contact Us:</h2>
           <p className="mb-4">
-            If you need assistance or have any inquiries, please don't hesitate to reach out to our support team. You can contact us via email at <a href="mailto:support@outsource.com" className="text-blue-500 underline">support@outsource.com</a>
+            If you need assistance or have any inquiries, please don't hesitate to reach out to our support team. You can contact us via email at <a href="mailto:outsource809@gmail.com" className="text-blue-500 underline">outsource809@gmail.com</a>
           </p>
           <h2 className="text-xl font-bold mb-4">FAQs (Frequently Asked Questions):</h2>
           <p className="mb-4">

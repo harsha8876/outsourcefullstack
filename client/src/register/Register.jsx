@@ -83,7 +83,7 @@ const Register = () => {
         <div name='left' className='flex flex-col gap-3'>
         <h1 className="text-gray-600 text-[30px] font-semibold">Create a new account</h1>
         <label className='text-gray-500 font-medium'>Username</label>
-        <input name="username" onChange={handleChange} className='text-gray-500 font-medium border-gray-400 border-[1px] p-2 focus:border-blue-400 focus:outline-none w-full' placeholder='Enter your username' />
+        <input name="username" onChange={handleChange} className='text-gray-500 font-medium border-gray-400 border-[1px] p-2 focus:border-blue-400 focus:outline-none w-full' placeholder='Enter your username' required/>
         <label className='text-gray-500 font-medium'>Email</label>
         <input name="email" type='email' onChange={handleChange} className='text-gray-500 font-medium border-gray-400 border-[1px] p-2 focus:border-blue-400 focus:outline-none w-full' placeholder='Enter your email address'/>
         <label className='text-gray-500 font-medium'>Password</label>

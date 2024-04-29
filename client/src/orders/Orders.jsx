@@ -32,6 +32,9 @@ const Orders = () => {
       }
     }
   };
+  const handleGigNavigation = (gigId) => {
+    navigate(`/gig/${gigId}`); // Redirect to the gig page
+  };
   return (
     <div className="flex justify-center">
       {isLoading ? (
@@ -60,8 +63,8 @@ const Orders = () => {
                   className="odd:bg-[#DCF2F1] text-[#0F1035] font-medium items-center py-2"
                   key={order._id}
                 >
-                  <td>{order.title}</td>
-                  <td>
+                   <td onClick={() => handleGigNavigation(order.gigId)} style={{ cursor: 'pointer' }}>{order.title}</td>
+                  <td onClick={() => handleGigNavigation(order.gigId)} style={{ cursor: 'pointer' }}>
                     <img
                       name="image"
                       src={order.img}
