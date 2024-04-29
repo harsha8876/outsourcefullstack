@@ -36,6 +36,7 @@ const countries = [
 const Register = () => {
 
   const [file, setFile]=useState(null);
+  const [errors, setErrors] = useState({});
   const [user, setUser]=useState({
     username:"",
     email:"",
@@ -54,10 +55,35 @@ const Register = () => {
 
   const handleSeller = (e) =>{
     setUser((prev)=>{return {...prev, isSeller: e.target.checked}})
+    
   };
+  const validateEmail = (email) => {
+    const regex = /^[^\s@]+@[^\s@]+\.[^\s@]+$/;
+    return regex.test(email);
+  };
+
+  const validatePassword = (password) => {
+    const regex = /^(?=.*\d)(?=.*[a-z])(?=.*[A-Z])(?=.*[!@#$%^&*])(?=.*[^\s]).{8,}$/;
+    return regex.test(password);
+  };
+
 
   const handleSubmit =async (e) =>{
     e.preventDefault()
+    // Validate email
+    if (!validateEmail(user.email)) {
+      setErrors((prev) => ({ ...prev, email: 'Invalid email address' }));
+      return;
+    }
+
+    // Validate password
+    if (!validatePassword(user.password)) {
+      setErrors((prev) => ({
+        ...prev,
+        password: 'Must contain 8+ characters, mixed case, numbers, and symbols.',
+      }));
+      return;
+    }
 
     const url = await upload(file)
     try{
@@ -65,7 +91,7 @@ const Register = () => {
         ...user,
         img:url,
       });
-      navigate("/")
+      navigate("/login")
     }
     catch(err){
       console.log(err)
@@ -85,9 +111,9 @@ const Register = () => {
         <label className='text-gray-500 font-medium'>Username</label>
         <input name="username" onChange={handleChange} className='text-gray-500 font-medium border-gray-400 border-[1px] p-2 focus:border-blue-400 focus:outline-none w-full' placeholder='Enter your username' required/>
         <label className='text-gray-500 font-medium'>Email</label>
-        <input name="email" type='email' onChange={handleChange} className='text-gray-500 font-medium border-gray-400 border-[1px] p-2 focus:border-blue-400 focus:outline-none w-full' placeholder='Enter your email address'/>
+        <input name="email" type='email' onChange={handleChange} className='text-gray-500 font-medium border-gray-400 border-[1px] p-2 focus:border-blue-400 focus:outline-none w-full' placeholder='Enter your email address' required/>
+        {errors.email && <p className="text-red-500">{errors.email}</p>}
         <label className='text-gray-500 font-medium'>Password</label>
-        {/* <input name="password" type='password' onChange={handleChange} placeholder='Enter your password' className='text-gray-500 font-medium border-gray-400 border-[1px] p-2 focus:border-blue-400 focus:outline-none w-full'/> */}
         <div className='relative'>
         <input
             name="password"
@@ -95,6 +121,7 @@ const Register = () => {
             onChange={handleChange}
             placeholder='Enter your password'
             className='text-gray-500 font-medium border-gray-400 border-[1px] p-2 focus:border-blue-400 focus:outline-none w-full pr-10'
+            required
           />
           <button
             type="button"
@@ -104,6 +131,9 @@ const Register = () => {
             {showPassword ? <FaRegEyeSlash className="h-5 w-5" /> : <FaRegEye className="h-5 w-5" />}
           </button>
           </div>
+          {errors.password && (
+            <p className="text-red-500 text-sm">{errors.password}</p>
+          )}
         <label className='text-gray-500 font-medium'>Profile picture</label>
         <input type='file' onChange={(e)=>setFile(e.target.files[0])}  className='text-gray-500 font-medium border-gray-400 border-[1px]  focus:border-blue-400 focus:outline-none w-full'/>
         <label className='text-gray-500 font-medium'>Country</label>
