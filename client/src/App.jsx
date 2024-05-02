@@ -35,7 +35,8 @@ import SocialHub from './components/community/SocialHub'
 import Faqs from './components/about/Faqs'
 import Purpose from './components/about/Purpose'
 import Working from './components/about/Working'
-
+import ResetPassword from './Forgotpass/ResetPassword'
+import ForgotPassword from './Forgotpass/ForgotPassword'
 function App()
  {
   const queryClient = new QueryClient()
@@ -142,7 +143,14 @@ function App()
       {
         path : "/working",
         element:<Working/>
+      },{
+        path: "/forgotpassword",
+        element: <ForgotPassword />
       },
+      {
+        path: "/resetpassword/:token", // Updated path with ":token" parameter
+        element: <ResetPassword /> 
+      }
     ]
     },
   ]);

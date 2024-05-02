@@ -1,7 +1,7 @@
 import React, { useState } from 'react';
 import newRequest from '../../utils/newRequest';
 import { useNavigate } from 'react-router-dom';
-
+import { Link } from 'react-router-dom';
 const Login = () => {
   
   const [username, setUsername] = useState('')
@@ -33,6 +33,7 @@ const Login = () => {
         <input type='password' name='password' onChange={e=>setPassword(e.target.value)} className='text-gray-500 font-medium w-full border-gray-400 border-[1px] p-2 focus:border-blue-400 focus:outline-none md:w-[30pc]'/>
         <button type='submit'  className='bg-[#0D1B2A] text-white rounded-lg hover:bg-[#365486] font-medium p-2 w-full md:w-[30pc]'>Login</button>
         {error && error}
+        <Link to="/forgotpassword">Forgot Password?</Link>
       </form>
     </div>
   )

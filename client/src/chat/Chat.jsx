@@ -3,7 +3,7 @@ import React, { useEffect , useState} from 'react';
 import { Link, useParams } from 'react-router-dom';
 import { useQuery, useMutation, useQueryClient } from '@tanstack/react-query';
 import newRequest from '../utils/newRequest';
-import moment from 'moment'; // Import moment for date formatting
+
 
 const Chat = () => {
   const { id } = useParams();
@@ -76,7 +76,7 @@ const Chat = () => {
           "Something went wrong!"
         ) : (
           <div name="messages" className='px-2 sm:px-12 flex flex-col gap-5 h-96 overflow-y-auto scrollable-content'>
-            {messages.map(message => ( // Updated to use messages state
+            {messages.map(message => ( 
               <div name="item" className={message.userId === currentUser._id ? "foritemowner" : "foritem"} key={message._id}>
                 <img
                   src={usersData.find(user => user._id === message.userId)?.img || "/images/profile.jpg"}
