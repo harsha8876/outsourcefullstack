@@ -75,7 +75,7 @@ export const forgotpassword = async (req, res, next) => {
    await user.save({ validateBeforeSave: false });
 
    // 3. Send the token to email
-   const frontendUrl = "http://localhost:5173"; // Replace with your frontend URL
+   const frontendUrl = "http://localhost:5173"; 
    const resetUrl = `${frontendUrl}/resetpassword/${resetToken}`;
    const message = `We have received a password reset request. Please use the below link to reset your password:\n\n${resetUrl}\n\nThis reset password link will be valid only for 10 minutes.`;
 
