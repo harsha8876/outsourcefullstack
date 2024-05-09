@@ -1,7 +1,7 @@
 import axios from "axios";
 
 const newRequest = axios.create({
-  baseURL: process.env.BASE_URL,
+  baseURL: "https://outsourcebackend.onrender.com",
   withCredentials: true,
 });
 
